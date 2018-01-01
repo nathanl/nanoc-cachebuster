@@ -46,7 +46,7 @@ replace any references to the regularly-named file to the rewritten one.
 So, when you include a stylesheet:
 
 ```html
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="<%= @items["/styles/screen/"].path %>">
 ```
 
 And you rewrite the output of the file to include a fingerprint:
@@ -64,7 +64,7 @@ end
 The filter will change your HTML on compilation to:
 
 ```html
-<link rel="stylesheet" href="styles-cb7a4bb98ef.css">
+<link rel="stylesheet" href="screen-cb7a4bb98ef.css">
 ```
 
 You get simple, content-based cachebusters for free. All that is left for you
